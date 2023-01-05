@@ -1,8 +1,10 @@
-  first:
+# test/fixtures/quotes.yml
+
+first:
     name: First quote
 
-  second:
+second:
     name: Second quote
 
-  third:
+third:
     name: Third quote
