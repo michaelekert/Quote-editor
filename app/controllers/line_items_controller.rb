@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-  before_action :ser_quote
+  before_action :set_quote
   before_action :set_line_item_date
 
 
@@ -8,10 +8,10 @@ class LineItemsController < ApplicationController
   end
 
   def create
-    @line_item = @line_item_date.line_items.build(@line_item_params)
+    @line_item = @line_item_date.line_items.build(line_item_params)
 
     if @line_item.save
-      redirect_to quotes_path(@quote), notice: "Item was successfully created"
+      redirect_to quote_path(@quote), notice: "Item was successfully created"
     else
       render :new, status: :unprocessable_entity
     end
